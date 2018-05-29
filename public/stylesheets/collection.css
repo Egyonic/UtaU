@@ -1,17 +1,15 @@
 .singerCard{
     background-color: rgb(255, 252, 249);
+    height: auto;
 }
 .singer_left{
     /*background-color: #00ff97;*/
-    height: 350px;
 }
 .singer_center{
     /*background-color: #ffbf00;*/
-    height: 350px;
 }
 .singer_right{
     background-color: rgb(255, 0, 71);
-    height: 350px;
 }
 
 .singerRow{

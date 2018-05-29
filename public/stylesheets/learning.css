@@ -1,13 +1,12 @@
 .songCard{
     background-color: white;
+    margin-top: 1rem;
 }
 .song_left{
     /*background-color: #00ff97;*/
-    height: 140px;
+    height: auto;
 }
-.song_center{
-    /*background-color: #ffc000;*/
-}
+
 .song_right{
     background-color: #ffc000;
 }
@@ -21,12 +20,12 @@
     padding-bottom: 10px;
 }
 .songRow:first-child{
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 .song_img{
-    width: 160px;
-    height: 100px;
-    margin-top: 1rem;
+    width: auto;
+    height: auto;
+    margin-top: 1.5rem;
 }
 .song_data{
     margin-top: 2rem;
