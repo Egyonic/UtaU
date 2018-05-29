@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>{{title}}</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+      <script src="/javascripts/jquery-3.3.1.min.js"></script>
+      <script src="./bootstrap/js/bootstrap.js"></script>
+      <script src="javascripts/common.js"></script>
+      <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="stylesheets/home.css">
+      <link rel="stylesheet" href="stylesheets/common.css">
+      <link rel="stylesheet" href="stylesheets/collection.css">
+      <link rel="stylesheet" href="stylesheets/learning.css">
+      <link rel="stylesheet" href="stylesheets/user.css">
+  </head>
+  <body>
+  <div class="container-fluid" id="topnav">
+    <div  class="container" >
+        <nav id="myNavbar" class="nav nav-pills flex-column flex-sm-row">
+            <a class="navbar-brand text-light" href="#">UtaUta</a>
+            <a class="flex-sm-fill text-sm-center nav-link border-right" href="../home">首页</a>
+            <a class="flex-sm-fill text-sm-center nav-link border-right" style="color: #00ff89" href="../learning">学习</a>
+            <a class="flex-sm-fill text-sm-center nav-link border-right" href="../userCenter" >个人中心</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="../collections">介绍</a>
+            <!--<button class="btn btn-light my-2 my-sm-0" type="button">登陆</button>-->
+            <a class="" href="../home">
+                <img id="headIcon" class="img-fluid rounded-circle" src="images/headIcon.png">
+            </a>
+
+            <!--<button class="btn btn-light my-2 my-sm-0 bg-light" type="button">上传</button>-->
+        </nav>
+    </div>
+  </div>
+  <div id="mainContainer" class="container">
+    {{{body}}}
+  </div>
+
+  <div id="bottom_info" class="container">
+        <h5 class="text-center">copyright &copy UtaUta <span> <a href="#" class="text-right text-warning">与我联系</a></span></h5>
+        <!--<h6 class="text-right"><a href="#" class="text-warning">与我联系</a></h6>-->
+  </div>
+  </body>
+
+</html>

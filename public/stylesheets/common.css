@@ -1,0 +1,35 @@
+/*--------------这部分用来存放一些公共的样式------------------*/
+.menu_second{
+    width: 100%;
+    height: 80px;
+    background-color: #ff3937;
+    /*float: left;*/
+    /*border: solid 4px #ff3937;*/
+    /*border-radius: 8px;*/
+}
+
+.nav a{
+    color: #00ff89;
+}
+#topnav{
+    background-color: rgba(0, 0, 0, 0.51);
+}
+
+#bottom_info{
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.61);
+    padding: 5px 5px 5px 5px;
+    clear: both;
+    color: white;
+    position: relative;
+    float: bottom;
+}
+
+#userContentBg{
+    background-color: white;
+    margin-top: 20px;
+}
+#headIcon{
+    width: 50px;
+    height: auto;
+}

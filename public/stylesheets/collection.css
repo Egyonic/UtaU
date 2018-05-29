@@ -1,0 +1,45 @@
+.singerCard{
+    background-color: rgb(255, 252, 249);
+}
+.singer_left{
+    /*background-color: #00ff97;*/
+    height: 350px;
+}
+.singer_center{
+    /*background-color: #ffbf00;*/
+    height: 350px;
+}
+.singer_right{
+    background-color: rgb(255, 0, 71);
+    height: 350px;
+}
+
+.singerRow{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#singer_search{
+    padding-top: 1rem;
+    padding-bottom: 10px;
+}
+.singerRow:first-child{
+    margin-top: 3rem;
+}
+.singer_img{
+    margin: 1rem auto 1rem auto;
+    width: 100%;
+    height: auto;
+}
+.singer_name{
+    margin: 1rem auto 0 auto;
+}
+.singer_description{
+    margin-top: 1rem;
+}
+.singer_songs{
+    position: relative;
+    margin-top: 1rem;
+}
+.single_song{
+    color: #ffffff;
+}

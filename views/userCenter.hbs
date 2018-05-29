@@ -1,0 +1,200 @@
+<div>
+    空间
+</div>
+<div class="row" id="userContentBg">
+    <div class="col-2">
+        <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-info-list" data-toggle="list" href="#list-info" role="tab">
+                我的信息</a>
+            <a class="list-group-item list-group-item-action" id="list-image-list" data-toggle="list" href="#list-image" role="tab">
+                我的头像</a>
+            <a class="list-group-item list-group-item-action" id="list-collection-list" data-toggle="list" href="#list-collection" role="tab">
+                我的收藏</a>
+            <a class="list-group-item list-group-item-action" id="list-learn-record-list" data-toggle="list" href="#list-learn-record" role="tab">
+                学习记录</a>
+            <a class="list-group-item list-group-item-action" id="list-learn-record-list" data-toggle="list" href="#list-follow" role="tab">
+                关注列表</a>
+            <a class="list-group-item list-group-item-action" id="list-learn-record-list" data-toggle="list" href="#list-news" role="tab">
+                关注动态</a>
+        </div>
+    </div>
+    <div class="col-10">
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-info" role="tabpanel">
+                <form>
+                        <div class="form-group row">
+                            <label for="userName" class="col-sm-2 col-form-label">昵称</label>
+                            <div class="col-sm-10">
+                                <span type="text" class="form-control-plaintext" id="userName">
+                                    Egyonic
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">邮箱</label>
+                            <div class="col-sm-10">
+                                <span class="form-control-plaintext" id="inputPassword">
+                                    787961091@qq.com
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="userSex" class="col-sm-2 col-form-label">性别</label>
+                            <div class="col-sm-10">
+                                <span class="form-control-plaintext" id="userSex">
+                                    男
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="userDesc" class="col-sm-2 col-form-label">签名</label>
+                            <div class="col-sm-10">
+                                <span id="userDesc" class="form-control-plaintext">
+                                    想唱很多的日语歌...............
+                                </span>
+                            </div>
+                        </div>
+                        <button class="btn btn-light float-right" id="userChangeInfo">修改信息</button>
+                    </form>
+            </div>
+
+            <div class="tab-pane fade " id="list-image" role="tabpanel">
+                <img src="images/headIcon.png" class="img-thumbnail" id="userIcon">
+                <button class="btn btn-lg btn-info userIconBtn">更换头像</button>
+            </div>
+
+            <div class="tab-pane fade" id="list-collection" role="tabpanel">
+                <div class="container rounded collectCard">
+                    <div class="row collectRow">
+                        <div class="col-2 collect_left">
+                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
+                        </div>
+                        <div class="col-8 collect_center">
+                            <div class="container">
+                                <span class="collect_title">命に嫌われている</span>
+                                <br>
+                                <span class="collect_singer">mafumafu</span>
+                            </div>
+                        </div>
+                        <div class="col-2 collect_right">
+                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container rounded collectCard">
+                    <div class="row collectRow">
+                        <div class="col-2 collect_left">
+                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
+                        </div>
+                        <div class="col-8 collect_center">
+                            <div class="container">
+                                <span class="collect_title">命に嫌われている</span>
+                                <br>
+                                <span class="collect_singer">mafumafu</span>
+                            </div>
+                        </div>
+                        <div class="col-2 collect_right">
+                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container rounded collectCard">
+                    <div class="row collectRow">
+                        <div class="col-2 collect_left">
+                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
+                        </div>
+                        <div class="col-8 collect_center">
+                            <div class="container">
+                                <span class="collect_title">命に嫌われている</span>
+                                <br>
+                                <span class="collect_singer">mafumafu</span>
+                            </div>
+                        </div>
+                        <div class="col-2 collect_right">
+                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="list-learn-record" role="tabpanel">
+                <div class="container rounded collectCard">
+                    <div class="row collectRow">
+                        <div class="col-2 collect_left">
+                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
+                        </div>
+                        <div class="col-md-6 col-sm-4 collect_center">
+                            <div class="container">
+                                <span class="collect_title">命に嫌われている</span>
+                                <br>
+                                <span class="collect_singer">mafumafu</span>
+                            </div>
+                        </div>
+                        <div class="col-2 learn_time">
+                            <div class="container">
+                                上次学习<br>
+                                <span>2018-12-12</span>
+                            </div>
+                        </div>
+                        <div class="col-2 collect_right">
+                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container rounded collectCard">
+                    <div class="row collectRow">
+                        <div class="col-2 collect_left">
+                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
+                        </div>
+                        <div class="col-md-6 col-sm-4 collect_center">
+                            <div class="container">
+                                <span class="collect_title">命に嫌われている</span>
+                                <br>
+                                <span class="collect_singer">mafumafu</span>
+                            </div>
+                        </div>
+                        <div class="col-2 learn_time">
+                            <div class="container">
+                                上次学习<br>
+                                <span>2018-12-12</span>
+                            </div>
+                        </div>
+                        <div class="col-2 collect_right">
+                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container rounded collectCard">
+                    <div class="row collectRow">
+                        <div class="col-2 collect_left">
+                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
+                        </div>
+                        <div class="col-md-6 col-sm-4 collect_center">
+                            <div class="container">
+                                <span class="collect_title">命に嫌われている</span>
+                                <br>
+                                <span class="collect_singer">mafumafu</span>
+                            </div>
+                        </div>
+                        <div class="col-2 learn_time">
+                            <div class="container">
+                                上次学习<br>
+                                <span>2018-12-12</span>
+                            </div>
+                        </div>
+                        <div class="col-2 collect_right">
+                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="list-follow" role="tabpanel">
+                关注的人
+            </div>
+            <div class="tab-pane fade" id="list-news" role="tabpanel">
+                关注者的动态
+            </div>
+        </div>
+    </div>
+</div>

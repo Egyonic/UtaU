@@ -1,0 +1,17 @@
+.collectCard{
+    background-color: rgb(0, 184, 255);
+    /*height: 100px;*/
+    margin: 5px 0 5px 0;
+}
+.collect_img{
+    margin: 0.3rem 0 0.3rem 0;
+}
+.collect_btn{
+    margin-top: 1.5rem;
+}
+.learn_time{
+    background-color: rgb(0, 228, 255);
+}
+.userIconBtn{
+    margin-left: 2rem;
+}

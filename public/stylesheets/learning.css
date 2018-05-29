@@ -1,0 +1,51 @@
+.songCard{
+    background-color: white;
+}
+.song_left{
+    /*background-color: #00ff97;*/
+    height: 140px;
+}
+.song_center{
+    /*background-color: #ffc000;*/
+}
+.song_right{
+    background-color: #ffc000;
+}
+.songRow{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+#learning_search{
+    padding-top: 1rem;
+    padding-bottom: 10px;
+}
+.songRow:first-child{
+    margin-top: 3rem;
+}
+.song_img{
+    width: 160px;
+    height: 100px;
+    margin-top: 1rem;
+}
+.song_data{
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+.song_title{
+    font-size: 1.7rem;
+}
+.song_singer{
+    font-size: 1.4rem;
+}
+.song_collect{
+    margin-top: 1em;
+    margin-bottom: 0;
+    position: relative;
+    float: left;
+}
+.song_works{
+    margin-top: 0;
+    float: left;
+    clear: both;
+}
