@@ -1,3 +1,4 @@
+
 <div>
     空间
 </div>
@@ -26,7 +27,7 @@
                             <label for="userName" class="col-sm-2 col-form-label">昵称</label>
                             <div class="col-sm-10">
                                 <span type="text" class="form-control-plaintext" id="userName">
-                                    Egyonic
+                                    {{user.name}}
                                 </span>
                             </div>
                         </div>
@@ -34,7 +35,7 @@
                             <label for="inputPassword" class="col-sm-2 col-form-label">邮箱</label>
                             <div class="col-sm-10">
                                 <span class="form-control-plaintext" id="inputPassword">
-                                    787961091@qq.com
+                                    {{user.email}}
                                 </span>
                             </div>
                         </div>
@@ -42,7 +43,7 @@
                             <label for="userSex" class="col-sm-2 col-form-label">性别</label>
                             <div class="col-sm-10">
                                 <span class="form-control-plaintext" id="userSex">
-                                    男
+                                    {{user.sex}}
                                 </span>
                             </div>
                         </div>
@@ -50,7 +51,7 @@
                             <label for="userDesc" class="col-sm-2 col-form-label">签名</label>
                             <div class="col-sm-10">
                                 <span id="userDesc" class="form-control-plaintext">
-                                    想唱很多的日语歌...............
+                                    {{user.description}}
                                 </span>
                             </div>
                         </div>
@@ -59,7 +60,7 @@
             </div>
 
             <div class="tab-pane fade " id="list-image" role="tabpanel">
-                <img src="images/headIcon.png" class="img-thumbnail" id="userIcon">
+                <img src="{{user.image}}" class="img-thumbnail" id="userIcon">
                 <button class="btn btn-lg btn-info userIconBtn">更换头像</button>
             </div>
 

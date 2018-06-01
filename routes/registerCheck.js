@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var mysql =require('mysql');
+var mysql = require('mysql');
 
-var json;
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
+    console.log("get post request");
+    var queryStr = req.body.account;
+    var data = "my data";
 
     var connection = mysql.createConnection({
         host     : 'localhost',
@@ -12,22 +14,16 @@ router.get('/', function(req, res, next) {
         database : 'uta'
     });
     connection.connect();
-    connection.query('SELECT * FROM song limit 6',
-        function (error, results, fields) {
+    connection.query('select account from user where account = ?',[queryStr],
+        function (error, results, field) {
             if (error) throw error;
             if(results.length == 0){
-                console.log("result is empty")
+                res.send('可用');
             }else {
                 console.log(results);
+                res.send('不可用');
             }
-
-            json = results;
-            res.render('learning',{title:'学习歌曲',songs:json});
-            // console.log("json: ");
-            // console.log(json[0]);
-        });
-    connection.end();
-
+    });
 
 });
 
