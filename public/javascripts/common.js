@@ -41,7 +41,7 @@ function register(event) {
     $.post("registerCheck/register",{ acc:account, password:psd, email:eml},function (data) {
         if(data == true){
             alert("注册成功!将跳转至个人中心");
-            // window.location.href = "userCenter";
+            window.location.href = "userCenter";
         }else {
             alert("用户名不可用，请重试");
         }
@@ -53,15 +53,16 @@ function register(event) {
 function login() {
     var account = $("#loginAccount").val();
     var psd = $("#loginPassword").val();
-    console.log(account);
-    console.log(psd);
 
     $.post("login",{ acc:account, password:psd},function (data) {
         console.log(data);
         if(data == true){
             alert("验证成功!将跳转至个人中心");
-            //成功后的跳转，跳转至个人中心
-            window.location.href = "userCenter";
+            sessionStorage.setItem("account",account);
+            console.log("account before sent to backend");
+            console.log(sessionStorage.getItem("account"));
+            alert(sessionStorage.getItem("account"));
+            window.location.href = "userCenter?account="+account;
         }else {
             alert("用户名或密码错误,请重试");
         }
