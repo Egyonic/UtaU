@@ -12,7 +12,9 @@ router.get('/', function(req, res, next) {
     });
     connection.connect();
     connection.query('select * from lyrics',function (error, results, field) {
-        if(error) throw error;
+        if(error) {
+            res.render('home',{title:'主页'});
+            throw error;}
         console.log(results);
         if(results.length){
             console.log('results: ');

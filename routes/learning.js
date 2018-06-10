@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         database : 'uta'
     });
     connection.connect();
-    connection.query('SELECT * FROM song limit 6',
+    connection.query('SELECT * FROM song limit 5',
         function (error, results, fields) {
             if (error) throw error;
             if(results.length == 0){
@@ -27,8 +27,35 @@ router.get('/', function(req, res, next) {
             // console.log(json[0]);
         });
     connection.end();
+});
 
+router.post('/',function (req,res,next) {
+    var songCount = req.body.count;
+    var getCount;
+    var connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',
+        password : 'smgsql',
+        database : 'uta'
+    })
+    connection.connect();
 
+    connection.query('SELECT * FROM song where sid >? limit 5',[songCount],
+        function (error, results, field) {
+        if(error) throw error;
+        if(results.length == 0){
+            console.log("length = 0");
+            getCount = 0;
+            res.send({newCount:getCount, songs:{}})
+        }else{
+            console.log("results are:");
+            console.log(results);
+            getCount = results.length;
+            res.send({newCount:getCount, songs:results})
+        }
+    });
+
+    connection.end();
 });
 
 module.exports = router;
