@@ -23,6 +23,7 @@ router.post('/',function (req,res, next) {
         function (error, results, field) {
             if (error) throw error;
             if(results.length == 0){
+                // connection.query('select ')
                 res.send(false);
             }else {
                 res.send(true);

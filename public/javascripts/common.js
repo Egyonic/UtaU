@@ -2,7 +2,7 @@ var count = 5;
 var page = 1;
 
 $(document).ready(function () {
-
+    checkLogin();
     $("#checkButton").click( check );
     $("#registerButton").click( register );
     $("#loginButton").click( login );
@@ -11,7 +11,17 @@ $(document).ready(function () {
     $("#songNext").click( nextPage);    //下一页的操作绑定
     $("#songPrevious").click( previousPage);//上一页的操作绑定
 
+
 });
+
+function checkLogin() {
+    if( sessionStorage.getItem("account")){
+        console.log("already log in")
+    }else{
+        $("#headIcon").src = "images/notLogin.jpg";
+        console.log("not log in")
+    }
+}
 
 //处理检查按钮，检查账户是否已存在，并通知用户
 function check(event) {
@@ -67,7 +77,7 @@ function login() {
             sessionStorage.setItem("account",account);
             console.log("account before sent to backend");
             console.log(sessionStorage.getItem("account"));
-            alert(sessionStorage.getItem("account"));
+            // alert(sessionStorage.getItem("account"));
             window.location.href = "userCenter?account="+account;
         }else {
             alert("用户名或密码错误,请重试");
@@ -102,6 +112,7 @@ function nextPage() {
     });
 }
 
+//上一页处理
 function previousPage() {
     if( count>5){
         if( count%5 == 0){

@@ -1,6 +1,11 @@
 /*--------------这部分用来存放一些公共的样式------------------*/
 #mainContainer{
-    min-height: 1000px;
+    min-height: 900px;
+    background-color: rgba(255, 255, 255, 0.91);
+}
+.content_block{
+    /*background-color: rgb(255, 0, 71);*/
+    margin: 2rem 0 2rem 0;
 }
 
 .menu_second{
@@ -20,6 +25,7 @@
 }
 #topnav{
     background-color: rgba(0, 0, 0, 0.51);
+    height: 3rem;
 }
 
 #bottom_info{
@@ -37,6 +43,6 @@
     margin-top: 20px;
 }
 #headIcon{
-    width: 50px;
+    width: 40px;
     height: auto;
 }

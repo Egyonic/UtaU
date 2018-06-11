@@ -1,0 +1,16 @@
+
+#lyricsPlaying{
+    color: white;
+    /*margin: 1rem 0;*/
+    background-color: rgba(0, 0, 0, 0.79);
+}
+
+
+#lyricsPlaying p{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#playArea{
+    margin-top: 1rem;
+}
