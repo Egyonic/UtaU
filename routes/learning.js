@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
             if(results.length == 0){
                 console.log("result is empty")
             }else {
-                console.log(results);
+                // console.log(results);
             }
 
             json = results;

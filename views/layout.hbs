@@ -2,13 +2,14 @@
 <html>
   <head>
       <title>{{title}}</title>
-      <link rel="stylesheet" href="bootstrap/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
       <script src="/javascripts/jquery-3.3.1.min.js"></script>
       <script src="./bootstrap/js/bootstrap.js"></script>
+      <script src={{js}}></script>
       <script src="javascripts/common.js"></script>
-      <script src="javascripts/userCenterE.js"></script>
+      <!--<script src="javascripts/userCenterE.js"></script>-->
+      <link rel="stylesheet" href={{css}}>
       <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-      <link rel="stylesheet" href="stylesheets/home.css">
+      <!--<link rel="stylesheet" href="stylesheets/home.css">-->
       <link rel="stylesheet" href="stylesheets/common.css">
       <link rel="stylesheet" href="stylesheets/collection.css">
       <link rel="stylesheet" href="stylesheets/learning.css">
@@ -23,9 +24,9 @@
             <a class="navbar-brand text-light" href="#">UtaUta</a>
             <a class="flex-sm-fill text-sm-center nav-link border-right" href="../home">首页</a>
             <a class="flex-sm-fill text-sm-center nav-link border-right" style="color: #00ff89" href="../learning">学习</a>
-            <a class="flex-sm-fill text-sm-center nav-link border-right" href="../userCenter" >个人中心</a>
+            <a id="userCenterLink" class="flex-sm-fill text-sm-center nav-link border-right" href="../userCenter" >个人中心</a>
             <a class="flex-sm-fill text-sm-center nav-link" href="../collections">介绍</a>
-            <a class="" href="../login">
+            <a id="headIconLink" class="" href="../login">
                 <img id="headIcon" class="img-fluid rounded-circle" src="images/notLogin.jpg">
             </a>
 

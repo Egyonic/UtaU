@@ -2,7 +2,7 @@
     min-height: 900px;
 }
 .collectCard{
-    background-color: rgb(0, 184, 255);
+    background-color: rgb(162, 188, 208);
     /*height: 100px;*/
     margin: 5px 0 5px 0;
 }
@@ -13,7 +13,7 @@
     margin-top: 1.5rem;
 }
 .learn_time{
-    background-color: rgb(0, 228, 255);
+    background-color: rgb(255, 248, 243);
 }
 .userIconBtn{
     margin-left: 2rem;

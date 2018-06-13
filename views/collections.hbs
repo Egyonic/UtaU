@@ -7,102 +7,35 @@
 <nav class="pageScroll">
     <ul class="pagination justify-content-center">
         <li class="page-item">
-            <a class="page-link" href="#">Previous</a>
+            <a class="page-link" href="#">上一页</a>
         </li>
         <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item">
-            <a class="page-link" href="#">Next</a>
+            <a class="page-link" href="#">下一页</a>
         </li>
     </ul>
 </nav>
 
+{{#each singers}}
 <div class="container singerCard">
     <div class="row singerRow">
         <div class="col-3 singer_left">
-            <h4 class="text-center singer_name">花たん</h4>
-            <h6 class="text-center singer_nickname">hanatan 花糖</h6>
-            <img src="images/singers/sg1.jpg" class="img-thumbnail singer_img">
+            <h4 class="text-center singer_name">{{name}}</h4>
+            <h6 class="text-center singer_nickname">{{nickname}}</h6>
+            <img class="img-thumbnail singer_img" src={{image}}>
         </div>
         <div class="col-7 singer_center">
             <div class="container singer_description">
-                被誉为是ニコニコ歌姫的花たん显然是女声中唱功最为了得的一位。
-                但凡是听过她作品的，大概没有人会不为她的唱功所折服，花たん的音域宽广，
-                声线充斥着疾走感和力度，演唱时极富感情，高音部分会有美妙独特的颤音，
-                声线有几分类似于滨崎步。除去唱歌，花たん还会画画，
-                『ゆびきり』的印象图就是她所绘制，因此花たん也被称为“歌う絵师さん”。
-                花たん翻唱的作品数量并不是很多，但这也正是珍贵的地方，因为每首都是精品，从
-                早期的作品来看，她一直被认为应该得到更高的评价。
+                {{description}}
             </div>
         </div>
         <div class="col-2 singer_right">
             <div class="singer_songs">
-                <a href="#" class="single_song">心做し</a>
-                <br>
-                <a href="#" class="single_song">歌に形はないけれど</a>
-                <br>
-                <a href="#" class="single_song">オレンジ</a>
+                {{songs}}
+                <!--<a href="#" class="single_song"></a>-->
             </div>
         </div>
     </div>
 </div>
 
-<div class="container singerCard">
-    <div class="row singerRow">
-        <div class="col-3 singer_left">
-            <h4 class="text-center singer_name">花たん</h4>
-            <h6 class="text-center singer_nickname">hanatan 花糖</h6>
-            <img src="images/singers/sg1.jpg" class="img-thumbnail singer_img">
-        </div>
-        <div class="col-7 singer_center">
-            <div class="container singer_description">
-                被誉为是ニコニコ歌姫的花たん显然是女声中唱功最为了得的一位。
-                但凡是听过她作品的，大概没有人会不为她的唱功所折服，花たん的音域宽广，
-                声线充斥着疾走感和力度，演唱时极富感情，高音部分会有美妙独特的颤音，
-                声线有几分类似于滨崎步。除去唱歌，花たん还会画画，
-                『ゆびきり』的印象图就是她所绘制，因此花たん也被称为“歌う絵师さん”。
-                花たん翻唱的作品数量并不是很多，但这也正是珍贵的地方，因为每首都是精品，从
-                早期的作品来看，她一直被认为应该得到更高的评价。
-            </div>
-        </div>
-        <div class="col-2 singer_right">
-            <div class="singer_songs">
-                <a href="#" class="single_song">心做し</a>
-                <br>
-                <a href="#" class="single_song">歌に形はないけれど</a>
-                <br>
-                <a href="#" class="single_song">オレンジ</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container singerCard">
-    <div class="row singerRow">
-        <div class="col-3 singer_left">
-            <h4 class="text-center singer_name">花たん</h4>
-            <h6 class="text-center singer_nickname">hanatan 花糖</h6>
-            <img src="images/singers/sg1.jpg" class="img-thumbnail singer_img">
-        </div>
-        <div class="col-7 singer_center">
-            <div class="container singer_description">
-                被誉为是ニコニコ歌姫的花たん显然是女声中唱功最为了得的一位。
-                但凡是听过她作品的，大概没有人会不为她的唱功所折服，花たん的音域宽广，
-                声线充斥着疾走感和力度，演唱时极富感情，高音部分会有美妙独特的颤音，
-                声线有几分类似于滨崎步。除去唱歌，花たん还会画画，
-                『ゆびきり』的印象图就是她所绘制，因此花たん也被称为“歌う絵师さん”。
-                花たん翻唱的作品数量并不是很多，但这也正是珍贵的地方，因为每首都是精品，从
-                早期的作品来看，她一直被认为应该得到更高的评价。
-            </div>
-        </div>
-        <div class="col-2 singer_right">
-            <div class="singer_songs">
-                <a href="#" class="single_song">心做し</a>
-                <br>
-                <a href="#" class="single_song">歌に形はないけれど</a>
-                <br>
-                <a href="#" class="single_song">オレンジ</a>
-            </div>
-        </div>
-    </div>
-</div>
+{{/each}}

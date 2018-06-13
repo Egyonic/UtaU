@@ -2,7 +2,8 @@ var count = 5;
 var page = 1;
 
 $(document).ready(function () {
-    checkLogin();
+    changeUserButton();
+    checkLogin();   //检查登陆情况，若登陆则改变右上角头像
     $("#checkButton").click( check );
     $("#registerButton").click( register );
     $("#loginButton").click( login );
@@ -11,15 +12,18 @@ $(document).ready(function () {
     $("#songNext").click( nextPage);    //下一页的操作绑定
     $("#songPrevious").click( previousPage);//上一页的操作绑定
 
-
+    if( window.location=="http://localhost:3000/collections"){
+        changeSongs();
+    }
 });
 
 function checkLogin() {
-    if( sessionStorage.getItem("account")){
-        console.log("already log in")
+    if( sessionStorage.getItem("account") ){
+        var acc =sessionStorage.getItem("account");
+        changeHeadIcon( acc);
+        // console.log("already log in");
     }else{
-        $("#headIcon").src = "images/notLogin.jpg";
-        console.log("not log in")
+        console.log("not log in");
     }
 }
 
@@ -73,10 +77,10 @@ function login() {
     $.post("login",{ acc:account, password:psd},function (data) {
         console.log(data);
         if(data == true){
-            alert("验证成功!将跳转至个人中心");
+            // alert("验证成功!将跳转至个人中心");
             sessionStorage.setItem("account",account);
-            console.log("account before sent to backend");
-            console.log(sessionStorage.getItem("account"));
+            // console.log("account before sent to backend");
+            // console.log(sessionStorage.getItem("account"));
             // alert(sessionStorage.getItem("account"));
             window.location.href = "userCenter?account="+account;
         }else {
@@ -170,4 +174,43 @@ function createSongCard(data) {
         '    </div>\n' +
         '</div>';
     $("#learningSongCards").append(newCard);
+}
+
+//根据登陆改变右上角头像
+function changeHeadIcon( acc) {
+    $.post("userCenter",{account:acc }, function (data) {
+        // console.log(data);
+        if(data){
+            // console.log("success");
+            $("#headIcon").attr("src",data.user.image); //改变头像
+            //使头像的链接指向用户中心
+            // $("#headIconLink").attr("href","../userCenter?account="+sessionStorage.getItem(acc));
+        }else{
+            console.log("response data of icon is empty")
+        }
+
+
+    });
+}
+
+//歌手页面把用hbs渲染的纯文本变成a标签
+function changeSongs() {
+    var songs = $(".singer_songs");
+    for(var i=0; i<songs.length; i++){  //遍历每个歌手的歌曲块
+        var as = '';
+        var s = songs[i].innerText.split('*');
+        for(var j=0; j<s.length; j++){
+            as +='<a href="#" class="single_song">'+s[j]+'</a><br>';
+        }
+        songs[i].innerHTML = as;
+    }
+}
+
+function changeUserButton() {
+    if( sessionStorage.getItem("account")){
+        var account = sessionStorage.getItem("account");
+        $("#userCenterLink").attr("href",'../userCenter?account='+account);
+        console.log("change userCenter link");
+        // window.location = 'http://localhost:3000/userCenter?account='+account;
+    }
 }

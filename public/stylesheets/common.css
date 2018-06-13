@@ -1,4 +1,17 @@
 /*--------------这部分用来存放一些公共的样式------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /*background-color: rgba(76, 231, 255, 0.34);*/
+    background: url('../images/b60.jpg');
+    background-size:cover;
+    padding: 0;
+    margin: 0;
+}
+
+
 #mainContainer{
     min-height: 900px;
     background-color: rgba(255, 255, 255, 0.91);

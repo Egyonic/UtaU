@@ -65,16 +65,17 @@
             </div>
 
             <div class="tab-pane fade" id="list-collection" role="tabpanel">
+                {{#each collections}}
                 <div class="container rounded collectCard">
                     <div class="row collectRow">
                         <div class="col-2 collect_left">
-                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
+                            <img class="img-thumbnail collect_img" src={{image}}>
                         </div>
                         <div class="col-8 collect_center">
                             <div class="container">
-                                <span class="collect_title">命に嫌われている</span>
+                                <span class="collect_title">{{name}}</span>
                                 <br>
-                                <span class="collect_singer">mafumafu</span>
+                                <span class="collect_singer">{{singer}}</span>
                             </div>
                         </div>
                         <div class="col-2 collect_right">
@@ -82,40 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container rounded collectCard">
-                    <div class="row collectRow">
-                        <div class="col-2 collect_left">
-                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
-                        </div>
-                        <div class="col-8 collect_center">
-                            <div class="container">
-                                <span class="collect_title">命に嫌われている</span>
-                                <br>
-                                <span class="collect_singer">mafumafu</span>
-                            </div>
-                        </div>
-                        <div class="col-2 collect_right">
-                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container rounded collectCard">
-                    <div class="row collectRow">
-                        <div class="col-2 collect_left">
-                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
-                        </div>
-                        <div class="col-8 collect_center">
-                            <div class="container">
-                                <span class="collect_title">命に嫌われている</span>
-                                <br>
-                                <span class="collect_singer">mafumafu</span>
-                            </div>
-                        </div>
-                        <div class="col-2 collect_right">
-                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
             </div>
 
             <div class="tab-pane fade" id="list-learn-record" role="tabpanel">
