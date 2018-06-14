@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="userDesc" class="col-sm-2 col-form-label">签名</label>
+                            <label for="userDesc" class="col-sm-2 col-form-label">个人介绍</label>
                             <div class="col-sm-10">
                                 <span id="userDesc" class="form-control-plaintext">
                                     {{user.description}}
@@ -87,22 +87,24 @@
             </div>
 
             <div class="tab-pane fade" id="list-learn-record" role="tabpanel">
+                {{#each record}}
                 <div class="container rounded collectCard">
+
                     <div class="row collectRow">
                         <div class="col-2 collect_left">
-                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
+                            <img class="img-thumbnail collect_img" src={{image}}>
                         </div>
                         <div class="col-md-6 col-sm-4 collect_center">
                             <div class="container">
-                                <span class="collect_title">命に嫌われている</span>
+                                <span class="collect_title">{{name}}</span>
                                 <br>
-                                <span class="collect_singer">mafumafu</span>
+                                <span class="collect_singer">{{singer}}</span>
                             </div>
                         </div>
                         <div class="col-2 learn_time">
                             <div class="container">
                                 上次学习<br>
-                                <span>2018-12-12</span>
+                                <span>{{time}}</span>
                             </div>
                         </div>
                         <div class="col-2 collect_right">
@@ -110,52 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container rounded collectCard">
-                    <div class="row collectRow">
-                        <div class="col-2 collect_left">
-                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
-                        </div>
-                        <div class="col-md-6 col-sm-4 collect_center">
-                            <div class="container">
-                                <span class="collect_title">命に嫌われている</span>
-                                <br>
-                                <span class="collect_singer">mafumafu</span>
-                            </div>
-                        </div>
-                        <div class="col-2 learn_time">
-                            <div class="container">
-                                上次学习<br>
-                                <span>2018-12-12</span>
-                            </div>
-                        </div>
-                        <div class="col-2 collect_right">
-                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container rounded collectCard">
-                    <div class="row collectRow">
-                        <div class="col-2 collect_left">
-                            <img src="images/songs/song1.jpg" class="img-thumbnail collect_img">
-                        </div>
-                        <div class="col-md-6 col-sm-4 collect_center">
-                            <div class="container">
-                                <span class="collect_title">命に嫌われている</span>
-                                <br>
-                                <span class="collect_singer">mafumafu</span>
-                            </div>
-                        </div>
-                        <div class="col-2 learn_time">
-                            <div class="container">
-                                上次学习<br>
-                                <span>2018-12-12</span>
-                            </div>
-                        </div>
-                        <div class="col-2 collect_right">
-                            <a class="btn btn-light btn-block collect_btn" role="button" href="#">学习</a>
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
 
             </div>
             <div class="tab-pane fade" id="list-follow" role="tabpanel">

@@ -200,7 +200,7 @@ function changeSongs() {
         var as = '';
         var s = songs[i].innerText.split('*');
         for(var j=0; j<s.length; j++){
-            as +='<a href="#" class="single_song">'+s[j]+'</a><br>';
+            as +='<a href="#" class="single_song">'+s[j]+'</a><hr>';
         }
         songs[i].innerHTML = as;
     }
