@@ -3,6 +3,7 @@ var mysql = require('mysql');
 var router = express.Router();
 
 var js = 'javascripts/userCenterE.js';
+var css= 'stylesheets/user.css';
 var userInfo;   //用户信息
 var collectInfo;    //存放收藏的歌曲信息
 var recordInfo = [{},{},{}];    //学习记录信息
@@ -84,9 +85,11 @@ router.get('/', function(req, res, next) {
             // console.log(collectInfo);
             console.log('recordInfo:');
             console.log(recordInfo);
+            console.log(css);
             res.render('userCenter',{
                 title:'用户中心',
                 js:js,
+                css:css,
                 user:userInfo,
                 collections:collectInfo,
                 record:recordInfo,

@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
+var css ='stylesheets/login.css';
+
 router.get('/', function(req, res, next) {
-    res.render('login.hbs',{title:'登陆'});
+    res.render('login.hbs',{title:'登陆',css:css});
 });
 
 router.post('/',function (req,res, next) {

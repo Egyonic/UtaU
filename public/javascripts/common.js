@@ -12,9 +12,6 @@ $(document).ready(function () {
     $("#songNext").click( nextPage);    //下一页的操作绑定
     $("#songPrevious").click( previousPage);//上一页的操作绑定
 
-    if( window.location=="http://localhost:3000/collections"){
-        changeSongs();
-    }
 });
 
 function checkLogin() {
@@ -184,7 +181,7 @@ function changeHeadIcon( acc) {
             // console.log("success");
             $("#headIcon").attr("src",data.user.image); //改变头像
             //使头像的链接指向用户中心
-            // $("#headIconLink").attr("href","../userCenter?account="+sessionStorage.getItem(acc));
+            $("#headIconLink").attr("href","../userCenter?account="+acc);
         }else{
             console.log("response data of icon is empty")
         }
@@ -193,18 +190,6 @@ function changeHeadIcon( acc) {
     });
 }
 
-//歌手页面把用hbs渲染的纯文本变成a标签
-function changeSongs() {
-    var songs = $(".singer_songs");
-    for(var i=0; i<songs.length; i++){  //遍历每个歌手的歌曲块
-        var as = '';
-        var s = songs[i].innerText.split('*');
-        for(var j=0; j<s.length; j++){
-            as +='<a href="#" class="single_song">'+s[j]+'</a><hr>';
-        }
-        songs[i].innerHTML = as;
-    }
-}
 
 function changeUserButton() {
     if( sessionStorage.getItem("account")){

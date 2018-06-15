@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var mysql =require('mysql');
 
+var js = 'javascripts/learning.js';
+var css = 'stylesheets/learning.css';
+
 var json;
 router.get('/', function(req, res, next) {
 
@@ -12,6 +15,7 @@ router.get('/', function(req, res, next) {
         database : 'uta'
     });
     connection.connect();
+
     connection.query('SELECT * FROM song limit 5',
         function (error, results, fields) {
             if (error) throw error;
@@ -22,7 +26,7 @@ router.get('/', function(req, res, next) {
             }
 
             json = results;
-            res.render('learning',{title:'学习歌曲',songs:json});
+            res.render('learning',{title:'学习歌曲',songs:json,js:js,css:css});
             // console.log("json: ");
             // console.log(json[0]);
         });
