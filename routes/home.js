@@ -30,10 +30,11 @@ router.get('/', function(req, res, next) {
     connection.query('select time from upload limit 3', [],
         function (error, results, fields) {
             if(error) throw error;
+            console.log(results);
             for(var i=0;i<results.length; i++){
                 works[i].time = results[i].time.getFullYear();
-                works[i].time += ' '+results[i].time.getMonth();
-                works[i].time += +' '+results[i].time.getDate();
+                works[i].time += '-'+results[i].time.getMonth();
+                works[i].time += '-'+results[i].time.getDate();
             }
         });
     connection.query('select name from user_info limit 3', [],
@@ -54,8 +55,8 @@ router.get('/', function(req, res, next) {
             // console.log('results: ');
             // console.log(results);
             lyrics = results;
-            console.log(songs);
-            console.log('second query statement');
+            // console.log(songs);
+            // console.log('second query statement');
             res.render('home',{
                 title:'主页',
                 css:stylesheets,

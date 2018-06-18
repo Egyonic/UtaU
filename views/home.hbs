@@ -8,21 +8,21 @@
         </ol>
 
         <div class="carousel-inner">
-            <div class="carousel-item active " >
+            <div id="i1" class="carousel-item active " >
                 <img class="d-block w-100" src="images/roll3.png" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>学习日语歌曲</h2>
                     <p>分享你的声音</p>
                 </div>
             </div>
-            <div class="carousel-item c1" >
+            <div id="i2" class="carousel-item" >
                 <img class="d-block w-100" src="images/roll1.png" alt="Second slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>学习日语歌曲</h2>
                     <p>分享你的声音</p>
                 </div>
             </div>
-            <div class="carousel-item c1">
+            <div id="i3" class="carousel-item">
                 <img class="d-block w-100" src="images/roll2.png" alt="Third slide">
 
             </div>
@@ -71,12 +71,12 @@
             <div class="card-deck content_block">
                 {{#each works}}
                 <div class="card">
-                    <img class="card-img-top" src={{image}} alt="Card image cap">
+                    <img class="card-img-top" alt="Card image cap" src={{image}}>
                     <div class="card-body">
                         <h5 class="card-title text-center">{{name}}</h5>
                         <h5 class="card-title text-center">{{user}}</h5>
+                        <p class="card-text"><small class="text-muted">{{time}}</small></p>
                         <p class="card-text">{{description}}</p>
-                        <p class="card-text"><small class="text-muted">上传时间:{{time}}</small></p>
                     </div>
                 </div>
                 {{/each}}

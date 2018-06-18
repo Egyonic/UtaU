@@ -44,8 +44,8 @@ router.get('/', function(req, res, next) {
         function (error, results, fields) {
             if(error) throw error;
             if( results.length){
-                console.log('查询学习记录成功！');
-                console.log(results);
+                // console.log('查询学习记录成功！');
+                // console.log(results);
                 times = results;
                 for(var i=0; i<results.length; i++){
                     recordInfo[i].time = results[i].time.getFullYear();
@@ -64,10 +64,10 @@ router.get('/', function(req, res, next) {
         [acc],
         function (error, results, fields) {
             if(error) throw error;
-            console.log("before songs log");
-            console.log(results);
+            // console.log("before songs log");
+            // console.log(results);
             songs = results;
-            console.log(songs);
+            // console.log(songs);
             for(var i=0; i<songs.length; i++){
                 recordInfo[i].name = results[i].name;
                 recordInfo[i].singer = results[i].singer;
@@ -85,7 +85,7 @@ router.get('/', function(req, res, next) {
             // console.log(collectInfo);
             console.log('recordInfo:');
             console.log(recordInfo);
-            console.log(css);
+            // console.log(css);
             res.render('userCenter',{
                 title:'用户中心',
                 js:js,
@@ -96,7 +96,6 @@ router.get('/', function(req, res, next) {
             });
         });
 
-    // res.render('userCenter',{title:'用户中心',js:js,user:userInfo,collections:collectInfo});
     connection.end();
 });
 

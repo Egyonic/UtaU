@@ -3,10 +3,10 @@
 <div id="playArea" class="container justify-content-center">
     <!--图片或视频-->
     <div id="music_media">
-        <img src="images/learnCover.jpg" class="img-fluid">
+        <img src={{song.image}} class="img-fluid">
     </div>
 
-    <audio id="playBar" src="music/1.mp3" controls="controls"></audio>
+    <audio id="playBar" src={{song.path}} controls="controls"></audio>
 
     <!--单句歌词-->
     <div id="lyricsPlaying" class="container justify-content-center">
@@ -22,6 +22,8 @@
         <button type="button" class="btn btn-primary float-right">停止</button>
         <button type="button" class="btn btn-primary">收藏</button>
     </div>
+    {{song.name}} <br>
+    {{song.description}}
 </div>
 
 <hr>

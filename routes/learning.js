@@ -34,8 +34,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function (req,res,next) {
-    var songCount = req.body.count;
-    var getCount;
     var connection = mysql.createConnection({
         host     : 'localhost',
         user     : 'root',
@@ -44,20 +42,42 @@ router.post('/',function (req,res,next) {
     })
     connection.connect();
 
-    connection.query('SELECT * FROM song where sid >? limit 5',[songCount],
-        function (error, results, field) {
-        if(error) throw error;
-        if(results.length == 0){
-            console.log("length = 0");
-            getCount = 0;
-            res.send({newCount:getCount, songs:{}})
-        }else{
-            console.log("results are:");
-            console.log(results);
-            getCount = results.length;
-            res.send({newCount:getCount, songs:results})
-        }
-    });
+    // console.log(req.body.search);
+    // console.log(req.body.count);
+
+    //上下页的处理
+    if(req.body.count){
+        var songCount = req.body.count;
+        var getCount;   //传递新的歌曲总数
+
+        connection.query('SELECT * FROM song where sid >? limit 5',[songCount],
+            function (error, results, field) {
+                if(error) throw error;
+                if(results.length == 0){
+                    console.log("length = 0");
+                    getCount = 0;
+                    res.send({newCount:getCount, songs:{}})
+                }else{
+                    // console.log("results are:");
+                    // console.log(results);
+                    getCount = results.length;
+                    res.send( {newCount:getCount, songs:results})
+                }
+            });
+    }
+    //搜索的处理
+    else {
+        var target = req.body.songname;
+        var que = "select * from song where name LIKE '%"+target+"%' ";
+        console.log(target);
+
+        connection.query(que, function (error, results, fields) {
+                if(error) throw error;
+
+                // console.log(results);
+                res.send( {songs:results});
+            })
+    }
 
     connection.end();
 });
