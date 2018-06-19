@@ -16,7 +16,8 @@
     margin-top: 1rem;
 }
 #music_media img{
-    /*width: 80%;*/
+    width: 100%;
+    height: auto;
 }
 #playBar{
     width: 100%;
