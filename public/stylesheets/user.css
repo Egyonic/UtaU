@@ -18,3 +18,7 @@
 .userIconBtn{
     margin-left: 2rem;
 }
+
+#userChangeCheckBtn{
+    display: none;
+}

@@ -85,7 +85,7 @@ function login() {
 
 //根据登陆改变右上角头像
 function changeHeadIcon( acc) {
-    $.post("userCenter",{account:acc }, function (data) {
+    $.post("userCenter",{account:acc, action:"query" }, function (data) {
         // console.log(data);
         if(data){
             // console.log("success");
@@ -104,7 +104,7 @@ function changeUserButton() {
     if( sessionStorage.getItem("account")){
         var account = sessionStorage.getItem("account");
         $("#userCenterLink").attr("href",'../userCenter?account='+account);
-        console.log("change userCenter link");
+        // console.log("change userCenter link");
         // window.location = 'http://localhost:3000/userCenter?account='+account;
     }
 }

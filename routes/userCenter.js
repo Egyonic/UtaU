@@ -56,7 +56,7 @@ router.get('/', function(req, res, next) {
                 console.log('查询学习记录出错');
             }
         });
-    console.log(times);
+    // console.log(times);
 
     //查询学习记录中歌曲的信息，并赋值给recordInfo数组对象
     connection.query('select name,singer,image from song where sid in( select sid from learn_rcd ' +
@@ -75,7 +75,7 @@ router.get('/', function(req, res, next) {
             }
         });
 
-    connection.query('select name,singer,image from song where sid in( select sid from collect_rcd ' +
+    connection.query('select sid,name,singer,image from song where sid in( select sid from collect_rcd ' +
         'where uid = (select uid from user where account=? ))',
         [acc],function ( error, results, fields) {
             if(error) throw error;
@@ -83,8 +83,8 @@ router.get('/', function(req, res, next) {
             collectInfo = results;
             // console.log('collectInfo: ');
             // console.log(collectInfo);
-            console.log('recordInfo:');
-            console.log(recordInfo);
+            // console.log('recordInfo:');
+            // console.log(recordInfo);
             // console.log(css);
             res.render('userCenter',{
                 title:'用户中心',
@@ -101,6 +101,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/',function (req,res,next) {
     var acc = req.body.account;
+    console.log(req.body.action);
     // console.log('查询字符中的用户');
     // console.log(acc);
 
@@ -111,19 +112,51 @@ router.post('/',function (req,res,next) {
         database : 'uta'
     });
     connection.connect();
-    connection.query('SELECT * FROM user_info where uid= (select uid from user where account=?)',
-        [acc],
-        function (error, results, fields) {
-            if (error) throw error;
-            if(results.length == 0){
-                console.log("result is empty");
-                res.send({user:{image:""}}) //返回空的user
-            }else {
-                res.send( {user:results[0] } );
-            }
+    if(req.body.action == "query"){
+        connection.query('SELECT * FROM user_info where uid= (select uid from user where account=?)',
+            [acc],
+            function (error, results, fields) {
+                if (error) throw error;
+                if(results.length == 0){
+                    console.log("result is empty");
+                    res.send({user:{image:""}}) //返回空的user
+                }else {
+                    res.send( {user:results[0] } );
+                }
 
+            });
+    }
+    else if(req.body.action == "change"){
+        var uid;
+        // console.log(req.body.sex);
+        var name = req.body.name;
+        var sex = req.body.sex;
+        var email = req.body.email;
+        var desc = req.body.desc;
+        var account = req.body.account;
+        // console.log(account);
+        // console.log(uid);
+        
+        connection.query('SELECT uid FROM user WHERE account = ?',[account],
+            function ( error, results, fields) {
+                if( error) throw error;
+                // console.log("result:");
+                // console.log(results);
+                uid = results[0].uid;
+                // console.log(uid);
+
+                connection.query('UPDATE user_info SET name=?, sex=?, description=?, email=? where uid = ?',
+                    [name,sex,desc,email, uid],function ( error,results, fields) {
+                        if(error) throw error;
+                        console.log(uid);
+                        res.send(true);
+                        connection.end();
+                    });
         });
-    connection.end();
+
+
+    }
+
 });
 
 module.exports = router;
