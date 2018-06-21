@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var fs =require('fs');
 var lyrics;
 var songs;
 var works;
@@ -53,14 +54,12 @@ router.get('/', function(req, res, next) {
         // console.log(results);
         if(results.length){
             // console.log('results: ');
-            // console.log(results);
-            lyrics = results;
             // console.log(songs);
             // console.log('second query statement');
             res.render('home',{
                 title:'主页',
                 css:stylesheets,
-                lyric:lyrics[0].content,
+                // lyric:lyrics,
                 songs:songs,
                 works:works
             });

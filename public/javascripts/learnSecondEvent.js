@@ -4,9 +4,13 @@
 * */
 
 $(document).ready(function () {
-    console.log('aa');
+    //把纯文本的歌词变成带html标签的形式
     var lyrics = $("#entire_lyric").text();
-    // console.log(lyrics);
-    // var s = ' aa<br>bbb<br>ccc<br>ddd';
     $("#entire_lyric").html( lyrics);
+
+    //学习记录
+    var account = sessionStorage.getItem("account");
+    $.post('learnSecond',{account:account},function (data) {
+        console.log(data);
+    });
 });

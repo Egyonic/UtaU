@@ -4,6 +4,7 @@ var mysql = require('mysql');
 var fs = require('fs');
 var css = 'stylesheets/learnSecond.css';
 var js ='javascripts/learnSecondEvent.js';
+var sid;
 
 router.get('/', function(req, res, next) {
     var lyricPath;
@@ -17,6 +18,7 @@ router.get('/', function(req, res, next) {
         password : 'smgsql',
         database : 'uta'
     });
+
 
     //查询歌词
     connection.query('select * from lyrics where sid = ?',[sid],function ( error, results, fields) {
@@ -51,7 +53,53 @@ router.get('/', function(req, res, next) {
 
     });
 
+});
 
+router.post('/', function(req, res, next){
+    var account = req.body.account;
+    var uid;
+    console.log(account);
+
+    var connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',
+        password : 'smgsql',
+        database : 'uta'
+    });
+    
+    connection.query('select uid from user where account = ?',[account],
+        function ( error, results, fields) {
+            if(error) throw error;
+
+            uid = results[0].uid;
+            console.log(uid);
+
+            connection.query('select time from learn_rcd where uid=? and sid=?', [uid, account],
+                function (error, results, fields) {
+                    if( error) throw error;
+
+                    //有记录，则跟新
+                    var date = new Date();
+                    var time = date;
+                    console.log(time);
+
+                    if(results.length>0){
+                        console.log('update');
+                        connection.query('UPDATE learn_rcd SET time = ? where uid=? AND sid=?',
+                            [time, uid, account],function ( error, results, fields) {
+                                res.send(true);
+                            });
+                    }
+                    //无记录，则插入
+                    else{
+                        console.log('insert');
+                        connection.query('INSERT INTO learn_rcd values(?,?,?)',
+                            [uid, sid, time],function ( error, results, fields) {
+                                res.send(true);
+                            });
+                    }
+                })
+    });
 
 });
 

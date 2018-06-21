@@ -6,7 +6,7 @@ var js = 'javascripts/userCenterE.js';
 var css= 'stylesheets/user.css';
 var userInfo;   //用户信息
 var collectInfo;    //存放收藏的歌曲信息
-var recordInfo = [{},{},{}];    //学习记录信息
+var recordInfo = [{},{},{},{},{},{},{},{},{},{}];    //学习记录信息
 var songs;
 var times;
 
@@ -42,10 +42,14 @@ router.get('/', function(req, res, next) {
     connection.query('select time from learn_rcd where uid = (select uid from user where account=? ) ',
         [acc],
         function (error, results, fields) {
-            if(error) throw error;
+            if(error){
+                console.log(error);
+                throw error;
+            }
+
             if( results.length){
                 // console.log('查询学习记录成功！');
-                // console.log(results);
+                console.log(results);
                 times = results;
                 for(var i=0; i<results.length; i++){
                     recordInfo[i].time = results[i].time.getFullYear();
@@ -59,7 +63,7 @@ router.get('/', function(req, res, next) {
     // console.log(times);
 
     //查询学习记录中歌曲的信息，并赋值给recordInfo数组对象
-    connection.query('select name,singer,image from song where sid in( select sid from learn_rcd ' +
+    connection.query('select name,sid,singer,image from song where sid in( select sid from learn_rcd ' +
         'where uid = (select uid from user where account=? ))',
         [acc],
         function (error, results, fields) {
@@ -70,6 +74,7 @@ router.get('/', function(req, res, next) {
             // console.log(songs);
             for(var i=0; i<songs.length; i++){
                 recordInfo[i].name = results[i].name;
+                recordInfo[i].sid = results[i].sid;
                 recordInfo[i].singer = results[i].singer;
                 recordInfo[i].image = results[i].image;
             }

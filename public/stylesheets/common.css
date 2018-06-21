@@ -11,6 +11,9 @@ body{
     margin: 0;
 }
 
+.navA:hover{
+    background-color: rgba(0, 185, 255, 0.18);
+}
 
 #mainContainer{
     min-height: 900px;

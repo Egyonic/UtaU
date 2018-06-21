@@ -18,6 +18,20 @@ $(document).ready(function () {
         });
         $("#userChangeCheckBtn").css( { "display":"inline"});
     });
+
+    $("div.rcdCard").each(function () {
+        console.log(this.innerHTML);
+        var str = this.innerHTML.toString();
+        var s = str.indexOf('2018');
+        console.log(s);
+        // var a = $(this).find("span").innerHTML;
+        // console.log(a);
+        if( s<0){
+            $(this).find("span").parent().parent().parent().css("display","none");
+        }
+        // this.parent().css("background-color", "red");
+
+    });
 });
 
 function check() {
@@ -32,7 +46,8 @@ function check() {
     $.post("userCenter", {action:"change",name:name, email:email, sex:sex, desc:desc, account:account} ,
         function (data) {
             if(data){
-                alert("修改成功！");
+                // alert("修改成功！");
+                $("#checkModal").modal('show');
                 changeLook();
 
             }

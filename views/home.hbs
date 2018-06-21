@@ -25,7 +25,7 @@
             <div id="i3" class="carousel-item">
                 <img class="d-block w-100" src="images/roll2.png" alt="Third slide">
                 <div class="carousel-caption d-none d-md-block">
-                    <h2 class="cpt3">享受多彩的翻唱</h2>
+                    <h2 class="cpt3"></h2>
                 </div>
             </div>
         </div>
@@ -44,12 +44,19 @@
         <div id="daily_msc">
             <p>
                 <a id="dailySongBtn" class="btn btn-info btn-block" data-toggle="collapse" href="#dailySong" role="button">
-                    每日一句
+                    每日歌词
                 </a>
             </p>
             <div id="dailySong" class="collapse">
                 <div id="dailySongLyric" class="card card-body">
-                    {{lyric}}
+                    「正（ただ）しいものは    正（ただ）しくいなさい」<br>
+                    「死（し）にたくないなら  生（い）きていなさい」<br>
+                     悲（かな）しくなるなら   それでもいいなら<br>
+                     ずっと一人（ひとり）で    笑（わら）えよ<br>
+                    「正确的东西就要以正确的形式存在。」<br>
+                    「不想死就活下去。」<br>
+                    如果愿意身陷悲伤之情<br>
+                    那就一直一个人笑下去吧。
                 </div>
             </div>
         </div>
@@ -58,7 +65,7 @@
             <div class="card-deck content_block">
                 {{#each songs}}
                 <div class="card">
-                    <img class="card-img-top" alt="Card image cap" src={{image}}>
+                    <a href="learnSecond?sid={{sid}}"> <img class="card-img-top" alt="Card image cap" src={{image}}> </a>
                     <div class="card-body">
                         <h5 class="card-title text-center"></h5>
                         <h5 class="card-title text-center">{{singer}}</h5>

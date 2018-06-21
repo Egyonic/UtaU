@@ -111,12 +111,13 @@ function createSongCard(data) {
         '        </div>\n' +
         '        <div class="col-2 song_right">\n' +
         '            <div class="song_data">\n' +
-        '                <a class="btn btn-light btn-block" role="button" href="#">学习</a>\n' +
+        '                <a class="btn btn-light btn-block" role="button" href="learnSecond?sid= ' + data.sid.toString() + ' ">学习</a>\n' +
         '                <p class="song_collect">收藏：20</p>\n' +
         '                <p class="song_works">作品：4</p>\n' +
         '            </div>\n' +
         '        </div>\n' +
         '    </div>\n' +
         '</div>';
+    console.log(data.sid);
     $("#learningSongCards").append(newCard);
 }
