@@ -88,8 +88,8 @@ router.get('/', function(req, res, next) {
             collectInfo = results;
             // console.log('collectInfo: ');
             // console.log(collectInfo);
-            // console.log('recordInfo:');
-            // console.log(recordInfo);
+            console.log('recordInfo:');
+            console.log(recordInfo);
             // console.log(css);
             res.render('userCenter',{
                 title:'用户中心',
